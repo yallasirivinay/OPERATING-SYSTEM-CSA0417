@@ -1,0 +1,22 @@
+#include<stdio.h>
+int main(){
+	int d,s,dou,t,po,b,ent,fil;
+	printf("enter no.of direct blocks:",d);
+	scanf("%d",&d);
+	printf("enter no.of single indirect block:");
+	scanf("%d",&s);
+	printf("enter no.of double indirect block:");
+	scanf("%d",&dou);
+	printf("enter no.of triple indirect block:");
+	scanf("%d",&t);
+	printf("enter bytes pointer requires:");
+	scanf("%d",&po);
+	printf("enter size of block in kbs:");
+	scanf("%d",&b);
+	ent=(b*1024)/po;
+	printf("%d",ent);
+	fil=(d+(s*ent)+(dou*ent*ent)+(t*ent*ent*ent))*b;
+	fil=fil/1024;
+	fil=fil/1024;
+	printf("maximum file size = %d",fil);
+}
